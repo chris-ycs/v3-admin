@@ -1,0 +1,35 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*", "node_modules"],
+  "compilerOptions": {
+    // 指定ECMAScript目标版本
+    "target": "esnext",
+    "module": "esnext",
+    // 启用严格检查
+    "strict": true,
+    // 从 tslib 导入辅助工具函数（比如 __extends， __rest等）
+    "importHelpers": true,
+    // 决定如何处理模块。或者是"Node"对于Node.js/io.js，或者是"Classic"（默认）。查看模块解析了解详情。
+    "moduleResolution": "node",
+    // 启用实验性的ES装饰器。
+    "experimentalDecorators": true,
+    // 显示详细的诊段信息。
+    "esModuleInterop": true,
+    // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。
+    "allowSyntheticDefaultImports": true,
+    // 生成相应的 .map文件。
+    "sourceMap": true,
+    "baseUrl": ".",
+    // 允许编译javascript文件，默认为false
+    "allowJs": false,
+    // 要包含的类型声明文件名列表。
+    "types": ["node", "webpack-env", "vite/client"],
+    // 模块名到基于 baseUrl的路径映射的列表。
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 编译过程中需要引入的库文件的列表。
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  }
+}
